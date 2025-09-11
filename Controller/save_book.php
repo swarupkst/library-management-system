@@ -2,8 +2,6 @@
 <?php
 require_once("../Model/database.php");
 
-
-
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $title   = $_POST['title'];
     $author  = $_POST['author'];
