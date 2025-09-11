@@ -1,0 +1,59 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100%;
+    background: #ffffff; /* optional background color behind image */
+}
+
+/* Image full width, maintain aspect ratio */
+#library {
+    
+    height: auto;
+    display: block;
+}
+
+/* Button container below the image */
+.button-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin: 20px 0; /* distance below image */
+}
+
+/* Buttons styling */
+.button {
+    padding: 12px 25px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s ease;
+    text-transform: uppercase;
+}
+
+/* Login button */
+#login {
+    background: #28a745;
+}
+#login:hover {
+    background: #218838;
+}
+
+/* Registration button */
+#registration {
+    background: #007bff;
+}
+#registration:hover {
+    background: #0069d9;
+}
