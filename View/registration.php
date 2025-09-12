@@ -15,7 +15,7 @@
 $servername = "localhost";
 $username   = "root";      // XAMPP এর ডিফল্ট
 $password   = "";          // XAMPP এ সাধারনত খালি থাকে
-$dbname     = "login_registration";
+$dbname     = "library_db";
 
 // Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);

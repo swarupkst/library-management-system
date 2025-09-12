@@ -6,10 +6,8 @@ if (!isset($_SESSION['user_id'])) {
     exit();
 }
 
-
 require_once("../Model/database.php");
 ?>
-
 
 <!DOCTYPE html>
 <html lang="en">
@@ -17,77 +15,7 @@ require_once("../Model/database.php");
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Library - Add Book</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background: #f6f1ee;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      padding: 20px;
-    }
-    .form-container {
-      background: #fff;
-      padding: 25px;
-      border-radius: 12px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-      width: 400px;
-      margin-bottom: 30px;
-    }
-    .form-container h2 {
-      text-align: center;
-      margin-bottom: 20px;
-      color: #4f4a45;
-    }
-    .form-group { margin-bottom: 15px; }
-    label {
-      display: block;
-      margin-bottom: 6px;
-      font-weight: bold;
-      color: #4f4a45;
-    }
-    input, textarea {
-      width: 100%;
-      padding: 10px;
-      border: 1px solid #ccc;
-      border-radius: 6px;
-      font-size: 14px;
-    }
-    textarea {
-      resize: vertical;
-      min-height: 80px;
-    }
-    button {
-      width: 100%;
-      padding: 12px;
-      background: #4f4a45;
-      color: #fff;
-      border: none;
-      border-radius: 6px;
-      cursor: pointer;
-      font-size: 16px;
-    }
-    button:hover { background: #333; }
-    table {
-      width: 90%;
-      border-collapse: collapse;
-      margin-top: 20px;
-      background: #fff;
-      border-radius: 10px;
-      overflow: hidden;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-    }
-    th, td {
-      border: 1px solid #ddd;
-      padding: 12px;
-      text-align: left;
-      font-size: 14px;
-    }
-    th {
-      background: #4f4a45;
-      color: #fff;
-    }
-  </style>
+  <link rel="stylesheet" href="librarian.css">
 </head>
 <body>
   <div class="form-container">
@@ -113,7 +41,6 @@ require_once("../Model/database.php");
     </form>
   </div>
 
-  <!-- Table for showing added books -->
   <table>
     <thead>
       <tr>

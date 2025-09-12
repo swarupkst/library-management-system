@@ -15,7 +15,7 @@
             <button type="submit">Login</button>
         </form>
         <div class="link">
-            <a href="#">Forgot Password?</a>
+            <a href="../Controller/forgot_password.php">Forgot Password?</a>
             <a href="registration.php">Registration</a>
         </div>
     </div>

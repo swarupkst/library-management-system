@@ -1,5 +1,5 @@
 <?php
-session_start();   // 🟢 এটা অবশ্যই লাগবে, একদম শুরুর দিকে
+session_start(); 
 
 require_once("../Model/database.php");
 
@@ -19,7 +19,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $_SESSION['role'] = $user['role'];
         $_SESSION['username'] = $user['username'];
 
-        // Redirect based on role
         if ($user['role'] == 'student') {
             header("Location: ../View/student.php");
         } 
