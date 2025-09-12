@@ -1,6 +1,6 @@
 <?php
 session_start();
-require_once("../Model/Database.php");
+require_once("../Model/database.php");
 
 // Include PHPMailer classes
 use PHPMailer\PHPMailer\PHPMailer;
@@ -13,33 +13,31 @@ require '../PHPMailer/SMTP.php';
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $email = $_POST['email'];
 
-    // ইউজার আছে কিনা চেক করো
-    $sql = "SELECT * FROM users WHERE email='$email'";
-    $result = $conn->query($sql);
+    $stmt = $conn->prepare("SELECT * FROM users WHERE email=? LIMIT 1");
+    $stmt->bind_param("s", $email);
+    $stmt->execute();
+    $result = $stmt->get_result();
+    $user = $result->fetch_assoc();
 
-    if ($result->num_rows > 0) {
-        // টোকেন বানাও
-        $token = bin2hex(random_bytes(50));
+    if ($user) {
+        $token = bin2hex(random_bytes(32));
         $expire = date("Y-m-d H:i:s", strtotime('+1 hour'));
 
-        // ডাটাবেসে টোকেন সেভ
-        $update = "UPDATE users SET reset_token='$token', token_expire='$expire' WHERE email='$email'";
-        $conn->query($update);
+        $stmt2 = $conn->prepare("UPDATE users SET reset_token=?, token_expire=? WHERE email=?");
+        $stmt2->bind_param("sss", $token, $expire, $email);
+        $stmt2->execute();
 
-        // Reset link বানাও
-        $reset_link = "../Controller/reset_password.php?token=" . $token;
+        $reset_link = "http://localhost/library-management-system/Controller/reset_password.php?token=$token";
 
-        // মেইল পাঠানো
         $mail = new PHPMailer(true);
         try {
             $mail->isSMTP();
-        $mail->Host       = 'smtp.hostinger.com';
-        $mail->SMTPAuth   = true;
-        $mail->Username   = 'portfolio@swarupkst.com'; 
-        $mail->Password   = '?Xn!Ln+8Pp>'; 
-        $mail->SMTPSecure = 'ssl';
-        $mail->Port       = 465;
-
+            $mail->Host       = 'smtp.hostinger.com';
+            $mail->SMTPAuth   = true;
+            $mail->Username   = 'portfolio@swarupkst.com';
+            $mail->Password   = '?Xn!Ln+8Pp>'; // App password or actual password
+            $mail->SMTPSecure = 'ssl';
+            $mail->Port       = 465;
 
             $mail->setFrom("portfolio@swarupkst.com", "Library System");
             $mail->addAddress($email);
