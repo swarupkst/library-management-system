@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 13, 2025 at 07:11 PM
+-- Generation Time: Sep 14, 2025 at 12:51 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.1.25
 
@@ -42,9 +42,12 @@ CREATE TABLE `books` (
 
 INSERT INTO `books` (`id`, `title`, `author`, `isbn`, `summary`, `quantity`) VALUES
 (13, 'zz', 'zz', 'zz', 'zz', 1),
-(17, 'adsf', 'asdaf', 'asdf', 'asdf', 5),
+(17, 'adsf', 'asdaf', 'asdf', 'asdf', 2),
 (18, 'asdf', 'asdf', 'asdf', 'adsf', 0),
-(20, 'test book ', 'aaa', 'ddfdd', 'some ', 1);
+(20, 'test book ', 'aaa', 'ddfdd', 'some ', 1),
+(21, 'sfg', 'sdfg', 'sdfg', 'sdfg', 1),
+(22, 'sdfg', 'sfdg', 'sdfg', 'sdfg', 1),
+(23, 'sdfgs', 'fdg', 'sdfg', 'sdfg', 1);
 
 -- --------------------------------------------------------
 
@@ -104,7 +107,31 @@ INSERT INTO `borrowed_books` (`id`, `student_id`, `book_id`, `borrow_date`, `ret
 (36, 27, 13, '2025-09-13 22:10:34', '2025-09-13 22:13:31', '2025-09-20'),
 (37, 27, 17, '2025-09-13 22:13:27', '2025-09-13 22:13:33', '2025-09-20'),
 (38, 27, 17, '2025-09-13 22:13:28', '2025-09-13 22:13:32', '2025-09-20'),
-(39, 27, 17, '2025-09-13 22:13:29', '2025-09-13 22:13:32', '2025-09-20');
+(39, 27, 17, '2025-09-13 22:13:29', '2025-09-13 22:13:32', '2025-09-20'),
+(40, 36, 13, '2025-09-14 00:36:23', '2025-09-14 00:55:07', '2025-09-20'),
+(41, 36, 17, '2025-09-14 00:54:52', '2025-09-14 00:55:06', '2025-09-20'),
+(42, 36, 17, '2025-09-14 00:54:53', '2025-09-14 00:55:06', '2025-09-20'),
+(43, 36, 17, '2025-09-14 00:54:54', '2025-09-14 00:55:05', '2025-09-20'),
+(44, 36, 17, '2025-09-14 00:54:54', '2025-09-14 00:55:05', '2025-09-20'),
+(45, 36, 17, '2025-09-14 00:54:55', '2025-09-14 00:55:04', '2025-09-20'),
+(46, 36, 13, '2025-09-14 01:17:34', '2025-09-14 01:26:04', '2025-09-20'),
+(47, 36, 22, '2025-09-14 01:26:06', '2025-09-14 01:26:08', '2025-09-20'),
+(48, 36, 22, '2025-09-14 01:38:58', '2025-09-14 01:39:18', '2025-09-20'),
+(49, 36, 23, '2025-09-14 01:38:59', '2025-09-14 01:39:18', '2025-09-20'),
+(50, 36, 21, '2025-09-14 01:39:00', '2025-09-14 01:39:17', '2025-09-20'),
+(51, 36, 20, '2025-09-14 01:39:01', '2025-09-14 01:39:17', '2025-09-20'),
+(52, 36, 13, '2025-09-14 01:39:03', '2025-09-14 01:39:16', '2025-09-20'),
+(53, 36, 17, '2025-09-14 01:39:04', '2025-09-14 01:39:16', '2025-09-20'),
+(54, 36, 17, '2025-09-14 01:39:04', '2025-09-14 01:39:14', '2025-09-20'),
+(55, 36, 17, '2025-09-14 01:39:04', '2025-09-14 01:39:14', '2025-09-20'),
+(56, 36, 17, '2025-09-14 01:39:05', '2025-09-14 01:39:15', '2025-09-20'),
+(57, 36, 17, '2025-09-14 01:39:05', '2025-09-14 01:39:12', '2025-09-20'),
+(58, 36, 23, '2025-09-14 01:39:30', '2025-09-14 01:39:33', '2025-09-20'),
+(59, 36, 21, '2025-09-14 01:39:31', '2025-09-14 01:42:01', '2025-09-20'),
+(60, 36, 22, '2025-09-14 02:09:19', '2025-09-14 02:09:26', '2025-09-20'),
+(61, 36, 17, '2025-09-14 03:37:56', NULL, '2025-09-20'),
+(62, 36, 17, '2025-09-14 03:37:56', NULL, '2025-09-20'),
+(63, 36, 17, '2025-09-14 03:37:57', NULL, '2025-09-20');
 
 -- --------------------------------------------------------
 
@@ -128,14 +155,13 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `full_name`, `username`, `email`, `password`, `role`, `reset_token`, `token_expire`) VALUES
-(27, 'Shuvo SJ', 'sj', 'sj@gmail.com', '$2y$10$TMdhCtTM35w0B7jAOZphnuiLYPp3lfA4o.t1bOM.t5JweyeEj2o3G', 'librarian', NULL, NULL),
-(28, 'sw', 'sw', 'sw@gmail.com', '$2y$10$TeEFoYznlFKz/qTqY7WF3e5xM9OrAhYrawCuEOvGnwJwO6dHHvhSO', 'student', NULL, NULL),
-(30, 'SWARUP BISWAS', 'swarupkst', 'swarupkst@gmail.com', '$2y$10$evGMI.BbBiVV2Ke2oVpAcu8LFMQ4I0EgyJjeuhisYsHlXGw5BEKU2', 'librarian', '3228f8ab4469092a88184526f724030aad04d3591f3f37bd45262b374c5d2179', '2025-09-13 19:24:53'),
-(31, 'mahataf', 'mahataf', 'mahatafislam960@gmail.com', '$2y$10$xTMw2eyDJK/SzaGIxKUG.uFHG5NRzWgprEscMLic9vQK7ZLPVg8L2', 'student', '96665e8d6c8e777b213696421aa312ed85d00a2270078f37dc58b5e613975521', '2025-09-13 02:08:29'),
-(32, 'student', 'student', 'student@gmail.com', '$2y$10$eWtNoPR3HodghR06mNYzee.6lAwcb5EKaGJ980OYuY/jDXmWAzbZS', 'student', NULL, NULL),
-(34, 'SWARUP BISWAS', 'swarupkst4', 'swarupkst4@gmail.com', '$2y$10$4SSgcBhyn0upXQmyCjpqu.ZCcPpmQ1dwNp/zM2.Zzn.ctiEmx9QHC', 'student', NULL, NULL),
-(35, 'some', 'some', 'rubaiya@gmail.com', '$2y$10$eeZpwmTPYSwU8H4OvRf4dOKHTtmDvbhYtNZr3Iw4u.WiYdNC1E5W2', 'student', NULL, NULL),
-(36, 'se', 'se', 'admin@email.com', '$2y$10$eSMrn0xWsWy//g0a5eGx2.qDz/RUnnUhV4dR20cjYg4F1PHrLK89q', 'student', NULL, NULL);
+(37, 'asdf', 'asdf', 'asdf@gmail.com', '$2y$10$VXWgJ8Ny01BBz5hfv/PL8eWjBsoqQF6X/arnwiJbLWmnIOGl.WVH6', 'admin', NULL, NULL),
+(38, 'admin', 'admin', 'admin@gmail.com', '$2y$10$.1F2B.rKRGpk8.sFvfcaeuF6rR0Abc/PYAK4n5/6uQzXY5/eVwGyy', 'admin', NULL, NULL),
+(39, 'student', 'student', 'student@gmail.com', '$2y$10$lM3pPdhhIZPt.hicAzlycOst3V.kSAD4SmzpPVptX5x3GCafhSoKq', 'student', NULL, NULL),
+(40, 'libary', 'library', 'libary@gmail.com', '$2y$10$3/kQ348FK.Kvcs3JB6u0geIgvW.8yNxkYwnmkUaYij0a8Q4.4U31.', 'librarian', NULL, NULL),
+(41, 'sw', 'sw', 'sw@gmail.com', '$2y$10$V5VnodP9wQsW..EI69IgaOg6j2S7N1qv5inblwSOijE3QGyr2sd6C', 'student', NULL, NULL),
+(42, 'sss', 'sss', 'sss@gmail.com', '$2y$10$abVHEWX1xrUWGdVevx2UTuVXGhqljF/6lus0BQ1KkKzWbwfSs0pKS', 'librarian', NULL, NULL),
+(43, 'ad admin', 'adadmin', 'adasmin@hfh.ff', '$2y$10$5d0kKWtaMY2wmsOvEmJItuvOiNpLLxOkiFI0tO2JSgow3J6Sf5Pb.', 'student', NULL, NULL);
 
 --
 -- Indexes for dumped tables
@@ -170,19 +196,19 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `books`
 --
 ALTER TABLE `books`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
 
 --
 -- AUTO_INCREMENT for table `borrowed_books`
 --
 ALTER TABLE `borrowed_books`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=40;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=64;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=37;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=44;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
