@@ -7,7 +7,7 @@ if (!isset($_SESSION['user_id'])) {
 
 require_once("../Model/database.php");
 
-// ধরলাম student এর নাম users টেবিলে আছে
+
 $student_id = $_SESSION['user_id'];
 $sqlUser = "SELECT full_name FROM users WHERE id = $student_id";
 $userResult = $conn->query($sqlUser);
@@ -22,7 +22,7 @@ $student_name = $user['full_name'];
     <title>Student Dashboard</title>
     <link rel="stylesheet" href="student.css">
     <script>
-        // Search filter for book cards
+
         function searchBooks() {
             let input = document.getElementById("searchInput").value.toLowerCase();
             let books = document.getElementsByClassName("book-card");
@@ -42,7 +42,7 @@ $student_name = $user['full_name'];
     </script>
 </head>
 <body>
-    <!-- Profile Section -->
+
     <div class="profile-bar">
         <div class="profile-info">
             👤 Welcome, <b><?php echo htmlspecialchars($student_name); ?></b>
@@ -53,7 +53,7 @@ $student_name = $user['full_name'];
         </div>
     </div>
 
-    <!-- Available Books -->
+
     <div class="available_book">
         <h2>Available Books</h2>
         <input type="text" id="searchInput" onkeyup="searchBooks()" placeholder="Search by title, author, ISBN...">
@@ -88,7 +88,7 @@ $student_name = $user['full_name'];
         </div>
     </div>
 
-    <!-- My Borrowed Books -->
+
     <div class="table-box">
         <h2>My Borrowed Books</h2>
         <table>
