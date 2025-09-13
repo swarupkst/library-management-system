@@ -57,3 +57,9 @@ body {
 #registration:hover {
     background: #0069d9;
 }
+/* Overdue Book Highlight */
+.overdue {
+    background: #ffe6e6 !important;
+    color: #e74c3c;
+    font-weight: bold;
+}

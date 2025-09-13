@@ -1,30 +1,147 @@
-/* General Page Style */
+/* Page Layout */
 body {
     font-family: Arial, sans-serif;
     background: #f5f7fa;
     margin: 0;
-    padding: 20px;
+    padding: 0;
     color: #333;
 }
 
-/* Page Heading */
-h2 {
-    margin: 20px 0 10px;
+/* Profile Page */
+.profile-page {
+    width: 400px;
+    margin: 50px auto;
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+}
+
+.profile-page h2 {
+    text-align: center;
+    margin-bottom: 20px;
     color: #2c3e50;
-    font-size: 22px;
-    border-left: 5px solid #3498db;
+}
+
+.profile-page form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.profile-page label {
+    font-weight: bold;
+}
+
+.profile-page input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+}
+
+.profile-page button {
+    padding: 10px;
+    background: #3498db;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.profile-page button:hover {
+    background: #2980b9;
+}
+
+.back-btn {
+    display: inline-block;
+    margin-top: 15px;
+    color: #3498db;
+    text-decoration: none;
+    font-weight: bold;
+}
+.back-btn:hover {
+    text-decoration: underline;
+}
+
+.profile-btn {
+    background: #2ecc71;
+    color: white;
+    padding: 6px 14px;
+    border-radius: 6px;
+    text-decoration: none;
+    margin-right: 10px;
+    transition: 0.3s;
+}
+.profile-btn:hover {
+    background: #27ae60;
+}
+
+
+/* Profile Bar */
+.profile-bar {
+    background: #3498db;
+    color: #fff;
+    padding: 12px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logout-btn {
+    background: #e74c3c;
+    color: white;
+    padding: 6px 14px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+}
+.logout-btn:hover {
+    background: #c0392b;
+}
+
+/* Dashboard Layout */
+.dashboard-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 20px;
+}
+
+/* Table Boxes Side by Side */
+.table-box {
+    flex: 1;
+    background: #fff;
+    border-radius: 8px;
+    padding: 15px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    overflow-x: auto;
+}
+
+/* Headings */
+h2 {
+    margin: 0 0 15px;
+    color: #2c3e50;
+    font-size: 18px;
+    border-left: 4px solid #3498db;
     padding-left: 10px;
 }
 
-/* Table Style */
+/* Search Input */
+#searchInput {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 12px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+}
+
+/* Tables */
 table {
     width: 100%;
     border-collapse: collapse;
-    margin-bottom: 30px;
-    background: #fff;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-    border-radius: 8px;
-    overflow: hidden;
+    font-size: 14px;
 }
 
 thead {
@@ -33,54 +150,42 @@ thead {
 }
 
 thead th {
-    padding: 12px;
+    padding: 10px;
     text-align: left;
-    font-weight: bold;
-    font-size: 14px;
 }
 
 tbody td {
-    padding: 12px;
+    padding: 10px;
     border-bottom: 1px solid #eee;
-    font-size: 14px;
 }
 
-/* Alternate row color */
 tbody tr:nth-child(even) {
     background: #f9f9f9;
 }
 
-/* Empty message */
-tbody tr td[colspan] {
-    text-align: center;
-    color: #888;
-    font-style: italic;
-}
-
 /* Buttons */
 button {
-    padding: 6px 14px;
+    padding: 5px 12px;
     background: #2ecc71;
     color: #fff;
     border: none;
     border-radius: 6px;
-    font-size: 14px;
     cursor: pointer;
+    font-size: 13px;
     transition: 0.3s;
 }
-
 button:hover {
     background: #27ae60;
 }
 
-/* Disabled / Out of Stock */
-td .out-stock {
+.out-stock {
     color: red;
     font-weight: bold;
 }
 
-/* Form inside table (inline button) */
-form {
-    display: inline-block;
-    margin: 0;
+/* Overdue Books */
+.overdue {
+    background: #ffe6e6 !important;
+    color: #e74c3c;
+    font-weight: bold;
 }

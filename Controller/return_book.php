@@ -17,7 +17,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // increase quantity
     $conn->query("UPDATE books SET quantity = quantity + 1 WHERE id = $book_id");
 
-    header("Location: ../View/student_dashboard.php");
+    header("Location: ../View/student.php");
     exit();
 }
 ?>
