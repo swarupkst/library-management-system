@@ -15,7 +15,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 90%%;
+    width: 90%;
 }
 
 .logout-btn {
@@ -109,7 +109,7 @@ button:hover {
     .form-row {
       display: flex;
       justify-content: space-between;
-      gap: 30px; /
+      gap: 30px; 
       margin-bottom: 15px;
     }
     .form-group {
