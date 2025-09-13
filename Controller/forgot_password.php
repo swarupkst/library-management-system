@@ -48,6 +48,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
             $mail->send();
             echo "✅ Password reset link sent to your email!";
+            
         } catch (Exception $e) {
             echo "❌ Message could not be sent. Error: {$mail->ErrorInfo}";
         }

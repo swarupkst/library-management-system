@@ -1,22 +1,10 @@
 <?php
-// registration.php
 
-// Start session (ব্যবহার করলে পরবর্তীতে message বা redirect সহজ হবে)
 session_start();
 
-// DB credentials - তোমার পরিবেশ অনুযায়ী ঠিক করে নাও
-$servername = "localhost";
-$db_username = "root";
-$db_password = "";
-$dbname     = "library_db";
 
-// Create connection
-$conn = new mysqli($servername, $db_username, $db_password, $dbname);
+require_once("../Model/database.php");
 
-// Check connection
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
 
 // Helper for safe echo to HTML
 function esc($str) {

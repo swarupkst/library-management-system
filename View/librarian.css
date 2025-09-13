@@ -68,3 +68,39 @@
       background: #4f4a45;
       color: #fff;
     }
+
+    .profile-btn {
+    background: #2ecc71;
+    color: white;
+    padding: 6px 14px;
+    border-radius: 6px;
+    text-decoration: none;
+    margin-right: 10px;
+    transition: 0.3s;
+}
+.profile-btn:hover {
+    background: #27ae60;
+}
+
+    .profile-bar {
+    background: #3498db;
+    color: #fff;
+    padding: 12px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.logout-btn {
+    background: #e74c3c;
+    color: white;
+    padding: 6px 14px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+}
+.logout-btn:hover {
+    background: #c0392b;
+}

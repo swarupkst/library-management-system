@@ -116,8 +116,6 @@ body {
     padding: 15px;
     box-shadow: 0 2px 6px rgba(0,0,0,0.1);
     overflow-x: auto;
-    width: 40%;
-    margin-left: 20%;
 }
 
 /* Headings */
@@ -131,7 +129,7 @@ h2 {
 
 /* Tables */
 table {
-    width: 100%;
+    width: 80%;
     border-collapse: collapse;
     font-size: 14px;
 }
@@ -185,7 +183,7 @@ button:hover {
 /* Book Container */
 .book-container {
     display: grid;
-    grid-template-columns: repeat(6, 1fr); 
+    grid-template-columns: repeat(5, 1fr); 
     gap: 20px;
     margin-top: 20px;
 }
@@ -261,15 +259,3 @@ button:hover {
     border: 2px solid #ccc;
 }
 
-.table-box tbody {
-    display: block;
-    max-height: calc(5 * 40px); /* assuming each row ~40px high */
-    overflow-y: auto;
-}
-
-.table-box thead, 
-.table-box tbody tr {
-    display: table;
-    width: 100%;
-    table-layout: fixed;
-}
