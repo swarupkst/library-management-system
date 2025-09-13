@@ -34,6 +34,10 @@ require_once("../Model/database.php");
         <input type="text" id="isbn" name="isbn" placeholder="Enter ISBN/ISSN number" required>
       </div>
       <div class="form-group">
+   <label for="quantity">Book Quantity</label>
+   <input type="number" id="quantity" name="quantity" min="1" value="1" required>
+  </div>
+      <div class="form-group">
         <label for="summary">Summary / Description</label>
         <textarea id="summary" name="summary" placeholder="Write a short overview..." required></textarea>
       </div>
@@ -42,30 +46,41 @@ require_once("../Model/database.php");
   </div>
 
   <table>
-    <thead>
-      <tr>
-        <th>Title</th>
-        <th>Author(s)</th>
-        <th>ISBN/ISSN</th>
-        <th>Summary</th>
-      </tr>
-    </thead>
-    <tbody>
-      <?php
-        $sql = "SELECT * FROM books ORDER BY title ASC";
-        $result = $conn->query($sql);
-        if ($result->num_rows > 0) {
-          while($row = $result->fetch_assoc()) {
-            echo "<tr>
-                    <td>{$row['title']}</td>
-                    <td>{$row['author']}</td>
-                    <td>{$row['isbn']}</td>
-                    <td>{$row['summary']}</td>
-                  </tr>";
-          }
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Author(s)</th>
+      <th>ISBN/ISSN</th>
+      <th>Summary</th>
+      <th>Quantity</th>
+      <th>Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <?php
+      $sql = "SELECT * FROM books ORDER BY title ASC";
+      $result = $conn->query($sql);
+      if ($result->num_rows > 0) {
+        while($row = $result->fetch_assoc()) {
+          echo "<tr>
+                  <td>{$row['title']}</td>
+                  <td>{$row['author']}</td>
+                  <td>{$row['isbn']}</td>
+                  <td>{$row['summary']}</td>
+                  <td>{$row['quantity']}</td>
+                  <td>
+                    <form action='../Controller/delete_book.php' method='POST' >
+                      <input type='hidden' name='id' value='{$row['id']}'>
+                      <button type='submit'>Delete</button>
+                    </form>
+                  </td>
+                </tr>";
         }
-      ?>
-    </tbody>
-  </table>
+      }
+    ?>
+  </tbody>
+</table>
+
+
 </body>
 </html>
