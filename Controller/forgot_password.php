@@ -34,8 +34,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $mail->isSMTP();
             $mail->Host       = 'smtp.hostinger.com';
             $mail->SMTPAuth   = true;
-            $mail->Username   = 'portfolio@swarupkst.com';
-            $mail->Password   = '?Xn!Ln+8Pp>'; // App password or actual password
+            $mail->Username   = 'Give your email here';
+            $mail->Password   = 'give your email password'; 
             $mail->SMTPSecure = 'ssl';
             $mail->Port       = 465;
 
